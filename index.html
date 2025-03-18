@@ -2,18 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AeroSwift – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aeroswift - Home</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, #005bea, #00c6fb);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      margin: 10px 15px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      border-radius: 4px;
+      background: #ddd;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #bbb;
+    }
+
+    /* Hero / Welcome Section */
+    .hero {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #fff;
+      margin: 20px;
+      border-radius: 8px;
+    }
+    .hero img {
+      /* Restrict the image to 600px max width and center it */
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 20px auto 0;
+    }
+
+    /* Features Section */
+    .features {
+      background-color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      margin: 20px;
+      border-radius: 8px;
+    }
+    .features h3 {
+      margin-bottom: 40px;
+      font-size: 1.8em;
+      color: #333;
+    }
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+    .feature-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .feature-card h4 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    /* Contact Us Section */
+    .contact-section {
+      background-color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      margin: 20px;
+      border-radius: 8px;
+    }
+    .contact-section img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .contact-section h3 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .contact-section p {
+      font-size: 1em;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to AeroSwift</h1>
+  <!-- Header -->
+  <header>
+    <h1>Aeroswift</h1>
+  </header>
+
+  <!-- Navigation Bar -->
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="booking.html">Manage Booking</a></li>
-      <li><a href="sign-in.html">Sign In</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
+    <a href="index.html">Home</a>
+    <a href="signin.html">Sign In/Sign Up</a>
+    <a href="reservation.html">Flight Reservations</a>
+    <a href="about.html">About Us</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact Us</a>
   </nav>
-  <!-- Add more content here -->
+
+  <!-- Hero / Welcome Section -->
+  <section class="hero">
+    <h2>Welcome to Aeroswift</h2>
+    <p>Book your flights quickly and easily with our intuitive reservation system.</p>
+    <!-- Updated smaller image -->
+    <img src="aeroswift_home.webp" alt="Aeroswift Image">
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h3>Why Choose Aeroswift?</h3>
+    <div class="features-container">
+      <!-- Easy Booking -->
+      <div class="feature-card">
+        <img src="easybooking.webp" alt="Easy Booking">
+        <h4>Easy Booking</h4>
+        <p>Quickly find and reserve flights with an intuitive interface.</p>
+      </div>
+      <!-- Manage Reservations -->
+      <div class="feature-card">
+        <img src="manage.webp" alt="Manage Reservations">
+        <h4>Manage Reservations</h4>
+        <p>Modify your bookings, choose your seat, or cancel with ease.</p>
+      </div>
+      <!-- 24/7 Support -->
+      <div class="feature-card">
+        <img src="contactus.webp" alt="24/7 Support">
+        <h4>24/7 Support</h4>
+        <p>Reach out to our dedicated support team any time for assistance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section class="contact-section">
+    <img src="contactus.webp" alt="Contact Us">
+    <h3>Get in Touch</h3>
+    <p>Need assistance? Contact our support team via phone, email, or live chat. We're here to help 24/7!</p>
+    <p><strong>Email:</strong> support@aeroswift.com</p>
+    <p><strong>Phone:</strong> +1 800-123-4567</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Aeroswift. All rights reserved.</p>
+  </footer>
 </body>
 </html>

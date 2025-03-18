@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aeroswift - Flight Reservations</title>
+  <style>
+    /* General Styles */
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #f0f0f0; }
+    /* Header */
+    header { background: linear-gradient(to right, #005bea, #00c6fb); color: #fff; padding: 20px; text-align: center; }
+    /* Navigation Bar */
+    nav { display: flex; justify-content: center; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px; flex-wrap: wrap; }
+    nav a { margin: 10px 15px; padding: 10px 20px; text-decoration: none; color: #333; font-weight: bold; border-radius: 4px; background: #ddd; transition: 0.3s; }
+    nav a:hover { background: #bbb; }
+    /* Content Section */
+    .content { padding: 50px 20px; background-color: #fff; margin: 20px; border-radius: 8px; }
+    form { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .form-group { flex: 1 1 200px; display: flex; flex-direction: column; }
+    label { margin-bottom: 5px; }
+    input, select { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 10px 20px; background-color: #005bea; color: #fff; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px; }
+    button:hover { background-color: #0041a8; }
+    /* Footer */
+    footer { background-color: #333; color: #fff; text-align: center; padding: 15px 0; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Aeroswift</h1>
+  </header>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="signin.html">Sign In/Sign Up</a>
+    <a href="reservation.html">Flight Reservations</a>
+    <a href="about.html">About Us</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <!-- Content Section -->
+  <div class="content">
+    <h2>Flight Reservations</h2>
+    <form>
+      <div class="form-group">
+        <label for="departure">Departure:</label>
+        <input type="text" id="departure" placeholder="City or Airport" required>
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" placeholder="City or Airport" required>
+      </div>
+      <div class="form-group">
+        <label for="departure-date">Departure Date:</label>
+        <input type="date" id="departure-date" required>
+      </div>
+      <div class="form-group">
+        <label for="return-date">Return Date:</label>
+        <input type="date" id="return-date">
+      </div>
+      <div class="form-group">
+        <label for="passengers">Passengers:</label>
+        <select id="passengers">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <button type="submit">Search Flights</button>
+    </form>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Aeroswift. All rights reserved.</p>
+  </footer>
+</body>
+</html>
