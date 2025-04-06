@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyTrip - Manage Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">AeroSwift</div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="book.html">Book Your Flight</a>
+      <a href="mytrip.html">My Trips</a>
+      <a href="help.html">Help</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="signin"><a href="#">LOGIN/SIGNUP</a></div>
+  </header>
+
+  <main>
+    <h1>MyTrip – Manage Your Booking</h1>
+
+    <form>
+      <label for="bookingRef">Booking Reference Number</label>
+      <input type="text" id="bookingRef" name="bookingRef" required />
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required />
+
+      <button type="submit">Retrieve Booking</button>
+    </form>
+
+    <div class="section">
+      <h2>Manage Options</h2>
+      <form class="manage-form">
+        <label for="modify">Modify Reservation</label>
+        <input type="text" id="modify" placeholder="Update Passenger Name or Date" />
+        <button type="button">Apply Changes</button>
+
+        <label for="cancel">Cancel Reservation</label>
+        <button type="button">Cancel Flight</button>
+
+        <label for="upgrade">Upgrade Seat Class</label>
+        <select id="upgrade">
+          <option>Economy</option>
+          <option>Business</option>
+          <option>First Class</option>
+        </select>
+        <button type="button">Upgrade</button>
+
+        <label for="baggage">Baggage Preference</label>
+        <select id="baggage">
+          <option>15kg</option>
+          <option>20kg</option>
+          <option>25kg</option>
+        </select>
+
+        <label for="meal">Meal Preference</label>
+        <select id="meal">
+          <option>Vegetarian</option>
+          <option>Non-Vegetarian</option>
+          <option>Special</option>
+        </select>
+
+        <label for="emailResend">Re-send Confirmation Email</label>
+        <input type="email" id="emailResend" placeholder="Enter your email" />
+        <button type="button">Resend Email</button>
+      </form>
+    </div>
+
+    <div class="section">
+      <h2>Select Your Seat</h2>
+      <div class="seat-map">
+        <div class="seat" onclick="toggleSeat(this)">7A</div>
+        <div class="seat" onclick="toggleSeat(this)">7B</div>
+        <div class="seat unavailable">7C</div>
+        <div class="seat unavailable">7D</div>
+        <div class="seat" onclick="toggleSeat(this)">7E</div>
+        <div class="seat" onclick="toggleSeat(this)">7F</div>
+
+        <div class="seat" onclick="toggleSeat(this)">8A</div>
+        <div class="seat" onclick="toggleSeat(this)">8B</div>
+        <div class="seat" onclick="toggleSeat(this)">8C</div>
+        <div class="seat unavailable">8D</div>
+        <div class="seat" onclick="toggleSeat(this)">8E</div>
+        <div class="seat" onclick="toggleSeat(this)">8F</div>
+
+        <div class="seat" onclick="toggleSeat(this)">9A</div>
+        <div class="seat" onclick="toggleSeat(this)">9B</div>
+        <div class="seat" onclick="toggleSeat(this)">9C</div>
+        <div class="seat" onclick="toggleSeat(this)">9D</div>
+        <div class="seat" onclick="toggleSeat(this)">9E</div>
+        <div class="seat" onclick="toggleSeat(this)">9F</div>
+
+        <div class="seat" onclick="toggleSeat(this)">10A</div>
+        <div class="seat" onclick="toggleSeat(this)">10B</div>
+        <div class="seat unavailable">10C</div>
+        <div class="seat" onclick="toggleSeat(this)">10D</div>
+        <div class="seat" onclick="toggleSeat(this)">10E</div>
+        <div class="seat" onclick="toggleSeat(this)">10F</div>
+      </div>
+      <div class="seat-label">Blue = Availabe ✅.<br>
+        Grey = Unavailable ❌.</div>
+    </div>
+  </main>
+
+  <script>
+    function toggleSeat(seat) {
+      if (seat.classList.contains("unavailable")) return;
+      document.querySelectorAll(".seat").forEach(s => s.classList.remove("selected"));
+      seat.classList.add("selected");
+    }
+  </script>
+</body>
+</html>

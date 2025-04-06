@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    background: url('bg-image.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #003366;
+    font-size: 18px;
+  }
+  
+  header {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 15px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    
+  }
+  
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .signin a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid white;
+    border-radius: 4px;
+  }
+  
+  main {
+
+    padding: 120px 30px 40px;
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.85); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      
+  }
+  
+  h1 {
+    text-align: center;
+    color: #12445f;
+
+  }
+  
+  form {
+    background: transparent;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 0;
+  box-shadow: none
+  }
+  
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 12px 20px;
+    background-color: #0077aa;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005f88;
+  }
+  
+  .section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .success-message, .error-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .seat-map {
+    display: grid;
+    grid-template-columns: repeat(6, 30px);
+    gap: 8px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .seat {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    background-color: #d9edf7;
+    border: 2px solid #0077aa;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .seat.selected {
+    background-color: #0077aa;
+    color: white;
+  }
+  
+  .seat.unavailable {
+    background-color: #ccc;
+    border-color: #999;
+    cursor: not-allowed;
+  }
+  
+  .seat-label {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .manage-form button {
+    width: 100%;
+  }
+  
+  .manage-form select,
+  .manage-form input {
+    margin-bottom: 10px;
+  }
+  
