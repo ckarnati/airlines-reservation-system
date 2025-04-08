@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <title>Flight Search | AeroSwift</title>
+  <style>
+    * { font-family: Montserrat; }
+
+    /* Header and Navigation */
+    header {
+      background-color: #052257;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 70px;
+    }
+    #nav-logo a {
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .nav-menu ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-menu ul li {
+      padding: 5px;
+    }
+    .nav-menu ul li a {
+      padding: 20px;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .nav-menu ul li a:hover {
+      color: rgb(231, 223, 223);
+      transition: 0.3s ease;
+    }
+    .nav-register a {
+      color: rgb(226, 212, 212);
+      font-size: 18px;
+      padding: 12px;
+      border-radius: 10px;
+      background-color: rgb(241, 17, 17);
+      text-decoration: none;
+    }
+    .nav-register a:hover {
+      background-color: rgb(172, 13, 13);
+      transition: 0.2s ease;
+    }
+
+    /* Main Content (Flight Search) */
+    .flight-search-box {
+      width: 100%;
+      max-width: 1100px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      padding: 30px 40px;
+      margin: 40px auto; /* margin creates space from header & footer */
+    }
+    .flight-search-form {
+      display: grid;
+      gap: 20px;
+    }
+    .trip-type {
+      display: flex;
+      gap: 20px;
+      font-size: 16px;
+    }
+    .trip-type label {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .location-dates,
+    .dates,
+    .extras {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .location-dates > div,
+    .dates > div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .flight-search-form input[type="text"],
+    .flight-search-form input[type="date"],
+    .flight-search-form select {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 80%;
+      font-size: 15px;
+    }
+    .flight-search-form label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #052257;
+    }
+    .flight-search-form button {
+      padding: 12px 30px;
+      background-color: rgb(216, 24, 24);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .flight-search-form button:hover {
+      background-color: rgb(167, 28, 28);
+      transition: 0.3s ease;
+    }
+
+    /* Available Flights Cards */
+    .available-flights {
+      max-width: 1100px;
+      margin: 30px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .flight-card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      height: 300px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+    }
+    .flight-card h4 {
+      margin-bottom: 10px;
+      color: #014a34;
+    }
+    .flight-card p {
+      margin: 5px 0;
+    }
+    .book-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .book-btn:hover {
+      background-color: #c72e38;
+    }
+
+    /* Booking Confirmation Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+    }
+    .popup-content h3 {
+      color: #014a34;
+      margin-bottom: 10px;
+    }
+    .popup-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #014a34;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #052257;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .footer-flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-flex h5 {
+      color: white;
+      font-size: 16px;
+      margin: 5px 0;
+    }
+    .footer-flex a {
+      color: white;
+      font-size: 14px;
+      margin: 5px;
+      text-decoration: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .location-dates,
+      .dates,
+      .extras {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header>
+    <nav>
+      <!-- Logo -->
+      <div id="nav-logo">
+        <a href="#">AeroSwift</a>
+      </div>
+      <!-- Navigation Menu -->
+      <div class="nav-menu">
+        <ul>
+          <li><a href="landing.html">Home</a></li>
+          <li><a href="manage.html">Manage Your Bookings</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <!-- Register Button -->
+      <div class="nav-register">
+        <a href="register.html">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="flight-search-box">
+      <form class="flight-search-form" id="searchForm">
+        <div class="trip-type">
+          <label><input type="radio" name="trip" checked> Return</label>
+          <label><input type="radio" name="trip"> One-Way</label>
+        </div>
+        <div class="location-dates">
+          <div>
+            <label>From</label>
+            <input type="text" placeholder="From">
+          </div>
+          <div>
+            <label>To</label>
+            <input type="text" placeholder="To">
+          </div>
+        </div>
+        <div class="dates">
+          <div>
+            <label>Departure</label>
+            <input type="date" value="2025-04-08">
+          </div>
+          <div>
+            <label>Return</label>
+            <input type="date" value="2025-04-14">
+          </div>
+        </div>
+        <div class="extras">
+          <div>
+            <label>Passengers</label>
+            <select>
+              <option>1 adult</option>
+              <option>2 adults</option>
+              <option>3 adults</option>
+              <option>4+ adults</option>
+            </select>
+          </div>
+          <div>
+            <label>Class</label>
+            <select>
+              <option>Economy</option>
+              <option>Business</option>
+              <option>First Class</option>
+            </select>
+          </div>
+          <div style="align-self: flex-end;">
+            <button type="submit">Search flights</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Flight Cards Container -->
+    <div id="flightsContainer" class="available-flights"></div>
+
+    <!-- Booking Confirmation Popup -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h3>Booking Confirmed!</h3>
+        <p>Your flight has been successfully booked. ✈️</p>
+        <button onclick="closePopup()">OK</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-flex">
+      <h5>AeroSwift</h5>
+      <a href="#">About Us</a>
+      <a href="#">Our Policy</a>
+      <a href="#">Promotions</a>
+      <a href="#">Careers</a>
+      <a href="#">Membership</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </footer>
+
+  <script>
+    const flights = [
+      { airline: "Air Canada", classes: ["Economy", "Business"] },
+      { airline: "WestJet", classes: ["Economy"] },
+      { airline: "Delta Airlines", classes: ["Economy", "Business"] },
+      { airline: "United Airlines", classes: ["Business"] }
+    ];
+
+    document.getElementById("searchForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const from = document.querySelector('input[placeholder="From"]').value;
+      const to = document.querySelector('input[placeholder="To"]').value;
+      const date = document.querySelectorAll('input[type="date"]')[0].value;
+      const flightClass = document.querySelectorAll("select")[1].value;
+      const results = flights.filter(f => f.classes.includes(flightClass));
+      const container = document.getElementById("flightsContainer");
+      container.innerHTML = results.length ? results.map(f => `
+        <div class="flight-card">
+          <h4>${f.airline}</h4>
+          <p>From: ${from}</p>
+          <p>To: ${to}</p>
+          <p>Date: ${date}</p>
+          <p>Class: ${flightClass}</p>
+          <button class="book-btn" onclick="confirmBooking()">Book Now</button>
+        </div>`).join("") 
+        : `<p>No flights available for ${flightClass} class.</p>`;
+    });
+
+    const confirmBooking = () => {
+      document.getElementById("popup").style.display = "flex";
+    };
+    const closePopup = () => {
+      document.getElementById("popup").style.display = "none";
+    };
+  </script>
+</body>
+</html>

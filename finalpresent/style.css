@@ -1,0 +1,447 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    text-decoration: none;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    background-color: #052257;
+}
+
+/* Logo styling */
+#nav-logo a {
+    color: white;
+    font-size: 18px;
+}
+
+/* Navigation links */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu ul li {
+    padding: 5px;
+}
+
+.nav-menu ul li a {
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.nav-menu ul li a:hover {
+    color: rgb(231, 223, 223);
+    transition: 0.3s ease;
+}
+
+/* Register button */
+.nav-register a {
+    color: rgb(226, 212, 212);
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: rgb(241, 17, 17);
+}
+
+.nav-register a:hover {
+    background-color: rgb(172, 13, 13);
+    transition: 0.2s ease;
+}
+
+/* Header Section */
+header {
+    position: relative;
+    background-image: url(medias/montreal.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Wrapper for header content and blur */
+.header-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Blurred background layer behind header text */
+.blur-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+
+    z-index: 1;
+}
+
+/* Header text (AeroSwift + tagline) with animation */
+.header-text {
+    position: absolute;
+    top: 25%;
+    left: 300px;
+    color: white;
+    font-size: 80px;
+    z-index: 2;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.header-text span {
+    font-weight: bold;
+    color: rgb(216, 78, 78);
+}
+
+/* Use Times font for header-specific text elements */
+.header-text h2, .header-text p, .header-text span {
+    font-family: Times;
+}
+
+.flight-heading {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Flight Section Layout */
+.flight-showcase {
+    display: flex;
+    justify-content: center;
+    max-width: 1300px;
+    margin: 60px auto;
+}
+   
+.flight-deals {
+    position: relative;
+    padding: 30px;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+    z-index: 1; 
+}
+  
+  /* Add blurred background behind the content using ::before */
+.flight-deals::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("medias/california.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    opacity: 0.8;
+    z-index: 0;
+}
+  
+.flight-deals > * {
+    position: relative;
+    z-index: 1;
+}
+
+.flight-heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Flight Section Grid Wrapper */
+.flight-cards-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-bottom: 30px;
+    background: none;
+}
+
+
+/* Individual Flight Card Styling */
+.flight-card {
+    background-color: #ffffffcd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    width: 350px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    cursor: pointer;
+
+    
+}
+
+.flight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.flight-card span {
+    color: rgb(29, 29, 155);
+}
+
+.flight-card a {
+    background-color: rgb(226, 22, 22);
+    padding: 10px;
+    width: max-content;
+    color: white;
+    margin-left: 35%;
+}
+
+.flight-card a:hover {
+    background-color: rgb(202, 48, 48);
+    transition: 0.4s ease;
+}
+
+.flight-info {
+    margin-left: auto;
+    padding-right: 10px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    font-size: 18px;
+}
+
+.flight-card h4 {
+    font-size: 20px;
+}
+
+
+/* Travel Cards Section */
+#travel-card-text {
+    background-color: #ffffffad;
+    font-size: 22px;
+    padding: 20px;
+    text-align: center;
+    color: rgb(29, 29, 155);
+}
+
+.travel-location-cards {
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px 10px 20px 10px;
+}
+
+
+/* Individual Travel Card */
+.travel-card {
+    height: 400px;
+    width: 400px;
+    text-align: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.travel-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.travel-card img {
+    border-radius: 20px;
+
+}
+
+/* Footer */
+.footer-flex {
+    display: flex;
+    flex-direction: column;
+    background-color: #052257;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer-flex h5 {
+    color: white;
+    font-size: 16px;
+}
+
+.footer-flex a {
+    color: white;
+    font-size: 14px;
+    margin: 5px;
+}
+
+
+/* MEDIA QUERIES for responsive design */
+
+/* Tablet view (between 600px and 900px) */
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    #nav-logo {
+        display: none;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-register {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+    .nav-register a {
+        font-size: 16px;
+        padding: 10px;
+        
+    }
+
+    .nav-menu ul li a {
+        padding: 10px;
+    }
+
+    .header-text {
+        font-size: 48px;
+        left: 50px;
+    }
+
+    .flight-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flight-card {
+        height: 200px;
+        width: 200px;
+    }
+
+    .flight-card a {
+        margin: auto;
+    }
+
+    .travel-location-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+    }
+
+    .travel-card {
+        margin: 10px 0;
+        width: 90%;
+        height: auto;
+    }
+
+    .travel-card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Phone view (below 600px) */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    #nav-logo {
+        display: none;
+        
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .nav-register {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+    .nav-register a {
+        font-size: 16px;
+        padding: 10px;
+        
+    }
+
+    .header-text {
+        top: 20%;
+        left: 30px;
+        font-size: 42px;
+    }
+
+    .flight-showcase {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .flight-deals {
+        border-radius: 10px;
+    }
+
+    .flight-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flight-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .flight-card a {
+        margin: 10px auto 0 auto;
+    }
+
+    .travel-location-cards {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .travel-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .travel-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-flex {
+        font-size: 12px;
+        padding: 20px;
+    }
+
+    .footer-flex a {
+        font-size: 12px;
+    }
+
+    .flight-heading,
+    #travel-card-text {
+        font-size: 18px;
+    }
+}
